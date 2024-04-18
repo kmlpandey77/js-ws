@@ -29,6 +29,6 @@ wss.on('connection', (ws) => {
 });
 
 //start our server
-server.listen(3000, () => {
+server.listen(12345, () => {
     console.log(`Server started on port ${server.address().port} :)`);
 });

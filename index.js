@@ -1,4 +1,4 @@
-const ws = new WebSocket('ws://localhost:1234');
+const ws = new WebSocket('ws://localhost:12345');
 
 console.log('tst');
 
