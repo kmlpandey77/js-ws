@@ -12,8 +12,6 @@ const server = http.createServer(app);
 //initialize the WebSocket server instance
 const wss = new WebSocket.Server({ server });
 
-console.log({app, server, wss})
-
 wss.on('connection', (ws) => {
 
     //connection is up, let's add a simple simple event
