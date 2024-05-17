@@ -1,22 +1,42 @@
 const ws = new WebSocket('ws://localhost:12345');
 
-ws.addEventListener('open', function() {
-  console.log('connected');
+ws.onopen = function() {
+    console.log("WebSocket connected.");
+    ws.send("Hello, server! \n");
+};
+
+ws.onmessage = function(event) {
+    console.log("Received from server: " + event.data);
+};
+
+ws.onclose = function() {
+    console.log("WebSocket disconnected.");
+};
+
+ws.onerror = function(error) {
+    console.error("WebSocket error: " + error);
+};
+
+
+
+
+// ws.addEventListener('open', function() {
+//   console.log('connected');
   
-});
+// });
 
-ws.addEventListener('message', function(data) {
-  console.log(data);
-});
+// ws.addEventListener('message', function(data) {
+//   console.log(data);
+// });
 
-// Add error handling as well
-ws.addEventListener('error', function (error) {
-  console.error('WebSocket error:', error);
-});
+// // Add error handling as well
+// ws.addEventListener('error', function (error) {
+//   console.error('WebSocket error:', error);
+// });
 
-ws.addEventListener('close', function() {
-  console.log('WebSocket connection closed');
-});
+// ws.addEventListener('close', function() {
+//   console.log('WebSocket connection closed');
+// });
 
 
 function enroll() {
